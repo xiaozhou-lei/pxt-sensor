@@ -2289,68 +2289,6 @@ namespace sensors {
 
 
 
-
-
-
-
-
-
-
-    // 手势传感器
-
-    /* Gesture parameters */
-    let GESTURE_THRESHOLD_OUT = 30;
-    let GESTURE_SENSITIVITY_1 = 33
-    let GESTURE_SENSITIVITY_2 = 18
-
-    /* Error code for returned values */
-    //ERROR = 0xFF
-
-    /* Acceptable parameters for setMode */
-    let POWER = 0
-    let PROXIMITY = 2
-    let WAIT = 3
-    let GESTURE = 6
-    let ALLS = 7
-
-    /* LED Drive values */
-    let LED_DRIVE_100MA = 0
-
-    /* Gesture Gain (GGAIN) values */
-    let GGAIN_4X = 2
-
-    /* LED Boost values */
-    let LED_BOOST_300 = 3
-
-    /* Gesture wait time values */
-    let GWTIME_2_8MS = 1
-
-
-    /* Default values */
-    let DEFAULT_GESTURE_PPULSE = 0x89    // 16us, 10 pulses
-    let DEFAULT_GPENTH = 40      // Threshold for entering gesture mode
-    let DEFAULT_GEXTH = 30      // Threshold for exiting gesture mode    
-    let DEFAULT_GCONF1 = 0x40    // 4 gesture events for int., 1 for exit
-    let DEFAULT_GGAIN = GGAIN_4X
-    let DEFAULT_GLDRIVE = LED_DRIVE_100MA
-    let DEFAULT_GWTIME = GWTIME_2_8MS
-    let DEFAULT_GOFFSET = 0       // No offset scaling for gesture mode
-    let DEFAULT_GPULSE = 0xC9    // 32us, 10 pulses
-    let DEFAULT_GCONF3 = 0       // ALLS photodiodes active during gesture
-    let DEFAULT_GIEN = 0       // Disable gesture interrupts
-
-    /* APDS-9960 I2C address:0x39 */
-
-
-
-
-    let gesture_data = new gesture_data_type;
-
-    let data_buf: Buffer = pins.createBuffer(128);
-
-
-
-
     
 
 }
