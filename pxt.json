@@ -5,7 +5,7 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "neopixel": "github:microsoft/pxt-neopixel/tree/v0.7.3"
+        "OLED": "github:Futurejason/myOLEDklkn"
     },
     "files": [
         "README.md",
