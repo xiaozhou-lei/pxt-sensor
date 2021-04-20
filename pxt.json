@@ -5,13 +5,15 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "OLED": "github:Futurejason/myOLEDklkn"
+        "neopixel": "github:microsoft/pxt-neopixel/tree/v0.7.3"
     },
     "files": [
         "README.md",
         "main.ts",
         "EMRGBLight.ts",
-		"_locales/zh/sensors-strings.json"
+		"_locales/zh/sensors-strings.json",
+        "pxtparts.json",
+        "parts/OLED12864_I2C.svg"
 		
     ],
     "public": true
