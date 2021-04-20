@@ -2344,18 +2344,6 @@ namespace sensors {
 
 
 
-    /* Container for gesture data */
-    export class gesture_data_type {
-        u_data: Buffer;
-        d_data: Buffer;
-        l_data: Buffer;
-        r_data: Buffer;
-        indexin: number;
-        total_gestures: number;
-        in_threshold: number;
-        out_threshold: number;
-    }
-
     let gesture_data = new gesture_data_type;
 
     let data_buf: Buffer = pins.createBuffer(128);
