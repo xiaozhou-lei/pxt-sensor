@@ -3040,44 +3040,6 @@ namespace sensors {
 
 
 
-    /**
-     * 使用手势传感器前，先进行初始化。
-     */
-    //% blockId="gesture_init" block="初始化手势传感器 "
-    export function init() {
-        let apds9960 = new APDS9960();
-        apds9960.pads9960_init();
-        apds9960.enableGestureSensor(false);
-        basic.pause(100);
-
-        //initiate gesture monitoring
-        control.inBackground(() => {
-            let prevGst = GESTURE_TYPE.None;
-            while (true) {
-                let gst = apds9960.read();
-                // basic.showNumber(gst);
-                if (gst != prevGst) {
-                    prevGst = gst;
-                    control.raiseEvent(3100, gst, EventCreationMode.CreateAndFire);
-
-                }
-                basic.pause(50);
-            }
-
-        })
-        // return apds9960;
-    }
-
-
-    /**
-     * 手势传感器检测挥手动作：无、上、下、左、右、前进、后退。
-     * @param gesture type of gesture to detect
-     * @param handler code to run
-     */
-    //% blockId="gesture_listener_block" block="检测手势|%gesture"
-    export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
-        control.onEvent(3100, gesture, handler);
-
-    }
+    
 
 }
