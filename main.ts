@@ -2287,6 +2287,15 @@ namespace sensors {
     }
 
 
+
+
+
+
+
+
+
+
+
     // 手势传感器
 
     /* Gesture parameters */
@@ -2302,7 +2311,7 @@ namespace sensors {
     let PROXIMITY = 2
     let WAIT = 3
     let GESTURE = 6
-    let ALL = 7
+    let ALLS = 7
 
     /* LED Drive values */
     let LED_DRIVE_100MA = 0
@@ -2327,7 +2336,7 @@ namespace sensors {
     let DEFAULT_GWTIME = GWTIME_2_8MS
     let DEFAULT_GOFFSET = 0       // No offset scaling for gesture mode
     let DEFAULT_GPULSE = 0xC9    // 32us, 10 pulses
-    let DEFAULT_GCONF3 = 0       // All photodiodes active during gesture
+    let DEFAULT_GCONF3 = 0       // ALLS photodiodes active during gesture
     let DEFAULT_GIEN = 0       // Disable gesture interrupts
 
     /* APDS-9960 I2C address:0x39 */
@@ -2341,7 +2350,7 @@ namespace sensors {
         d_data: Buffer;
         l_data: Buffer;
         r_data: Buffer;
-        index: number;
+        indexin: number;
         total_gestures: number;
         in_threshold: number;
         out_threshold: number;
@@ -2429,7 +2438,7 @@ namespace sensors {
                     //reg_val &= ~(1 << mode);
                     reg_val = 0x00;
                 }
-            } else if (mode == ALL) {
+            } else if (mode == ALLS) {
                 if (enable) {
                     reg_val = 0x7F;
                 } else {
@@ -2579,11 +2588,11 @@ namespace sensors {
         }
 
         /**
-         * @brief Resets all the parameters in the gesture data member
+         * @brief Resets ALLS the parameters in the gesture data member
          */
         resetGestureParameters() {
 
-            gesture_data.index = 0;
+            gesture_data.indexin = 0;
             gesture_data.total_gestures = 0;
 
             this.gesture_ud_delta = 0;
@@ -2953,11 +2962,11 @@ namespace sensors {
 
                         if (bytes_read >= 4) {
                             for (let ii = 0; ii < bytes_read; ii = ii + 4) {
-                                gesture_data.u_data[gesture_data.index] = fifo_data[ii + 0];
-                                gesture_data.d_data[gesture_data.index] = fifo_data[ii + 1];
-                                gesture_data.l_data[gesture_data.index] = fifo_data[ii + 2];
-                                gesture_data.r_data[gesture_data.index] = fifo_data[ii + 3];
-                                gesture_data.index++;
+                                gesture_data.u_data[gesture_data.indexin] = fifo_data[ii + 0];
+                                gesture_data.d_data[gesture_data.indexin] = fifo_data[ii + 1];
+                                gesture_data.l_data[gesture_data.indexin] = fifo_data[ii + 2];
+                                gesture_data.r_data[gesture_data.indexin] = fifo_data[ii + 3];
+                                gesture_data.indexin++;
                                 gesture_data.total_gestures++;
                             }
 
@@ -2970,7 +2979,7 @@ namespace sensors {
                                 }
                             }
                             /* Reset data */
-                            gesture_data.index = 0;
+                            gesture_data.indexin = 0;
                             gesture_data.total_gestures = 0;
                         }
 
