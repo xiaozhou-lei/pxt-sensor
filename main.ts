@@ -3030,8 +3030,6 @@ namespace sensors {
 
     /**
      * 手势传感器检测挥手动作：无、上、下、左、右、前进、后退。
-     * @param gesture type of gesture to detect
-     * @param handler code to run
      */
     //% blockId="gesture_listener_block" block="检测手势|%gesture"
     export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
