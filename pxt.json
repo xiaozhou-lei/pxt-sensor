@@ -11,9 +11,7 @@
         "README.md",
         "main.ts",
         "EMRGBLight.ts",
-		"_locales/zh/sensors-strings.json",
-        "pxtparts.json",
-        "parts/OLED12864_I2C.svg"
+		"_locales/zh/sensors-strings.json"
 		
     ],
     "public": true
