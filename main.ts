@@ -1,35 +1,3 @@
-enum DIR {
-    DIR_NONE,
-    DIR_LEFT,
-    DIR_RIGHT,
-    DIR_UP,
-    DIR_DOWN,
-    DIR_NEAR,
-    DIR_FAR,
-    DIR_ALL
-}
-enum STATE {
-    NA_STATE,
-    NEAR_STATE,
-    FAR_STATE,
-    ALL_STATE
-}
-enum GESTURE_TYPE {
-    //% block=无
-    None = 0,
-    //% block=向下
-    Right = 1,
-    //% block=向上
-    Left = 2,
-    //% block=向右
-    Up = 3,
-    //% block=向左
-    Down = 4,
-    //% block=向前
-    Forward = 5,
-    //% block=向后
-    Backward = 6
-}
 
 
 enum times {
