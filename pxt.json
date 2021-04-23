@@ -13,7 +13,6 @@
         "main.ts",
         "EMRGBLight.ts",
 		"_locales/zh/sensors-strings.json"
-		
     ],
     "public": true
 }
