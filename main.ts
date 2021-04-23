@@ -288,6 +288,23 @@ enum Shaft{
     Y_Shaft = 1,
 }
 
+enum GESTURE_TYPE {
+    //% block=无
+    None = 0,
+    //% block=向下
+    Right = 1,
+    //% block=向上
+    Left = 2,
+    //% block=向右
+    Up = 3,
+    //% block=向左
+    Down = 4,
+    //% block=向前
+    Forward = 5,
+    //% block=向后
+    Backward = 6
+}
+
 //% color="#FFA500" weight=10 icon="\uf2c9" block="Sensor:bit"
 namespace sensors {
     //% blockId=actuator_buzzer0 block="actuator_buzzer0 pin ：%pin|status %status"   group="有源蜂鸣器"
@@ -2255,7 +2272,17 @@ namespace sensors {
 
 
 
-
+    /**
+     * 手势传感器检测挥手动作：无、上、下、左、右、前进、后退。
+     * @param gesture type of gesture to detect
+     * @param handler code to run
+     */
+    //% weight=200 blockGap=8
+    //% blockId="gesture_listener_block" block="Detect gestures|%gesture" group="apds手势传感器"
+    //% subcategory="智能模块"
+    export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
+        control.onEvent(3100, gesture, handler);
+    }
 
 
     
