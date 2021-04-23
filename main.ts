@@ -2272,18 +2272,7 @@ namespace sensors {
 
 
 
-    /**
-     * 手势传感器检测挥手动作：无、上、下、左、右、前进、后退。
-     * @param gesture type of gesture to detect
-     * @param handler code to run
-     */
-    //% weight=200 blockGap=8
-    //% blockId="gesture_listener_block" block="Detect gestures|%gesture" group="apds手势传感器"
-    //% subcategory="智能模块"
-    export function onGesture(gesture: GESTURE_TYPE, handler: () => void) {
-        control.onEvent(3100, gesture, handler);
-    }
-
+    
 
     
 
